@@ -529,6 +529,37 @@ header {
   padding: 20px 28px 24px;
   background: var(--white);
 }
+.container-progress { margin-bottom: 14px; }
+.container-progress:empty { display: none; }
+.cp-label {
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+  line-height: 1.45;
+}
+.cp-label strong { color: var(--navy); font-weight: 600; }
+.cp-label.ok strong { color: #2e7d32; }
+.cp-bar {
+  height: 8px;
+  background: #efe9df;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.cp-fill {
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.35s ease;
+  border-radius: 4px;
+}
+.cp-fill.ok { background: #2e7d32; }
+.cp-hint {
+  font-size: 11px;
+  color: var(--grey);
+  font-style: italic;
+  line-height: 1.45;
+}
 .cart-stats {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 16px; margin-bottom: 14px;
@@ -737,7 +768,7 @@ footer .ftr-fine {
 </section>
 
 <div class="b2b-banner">
-  Vente exclusivement aux professionnels &nbsp;·&nbsp; Minimum <strong>1 container</strong> &nbsp;·&nbsp; Tarifs HT départ entrepôt Marseille &nbsp;·&nbsp; Remises sur volumes négociées
+  Vente B2B professionnels &nbsp;·&nbsp; Minimum <strong>1 container</strong> (20 palettes — <em>mix de références possible</em>) &nbsp;·&nbsp; Tarifs HT départ Marseille &nbsp;·&nbsp; Remises volumes négociées
 </div>
 
 <main class="products-section">
@@ -808,6 +839,7 @@ footer .ftr-fine {
     </div>
   </div>
   <div class="cart-footer" id="cart-footer">
+    <div class="container-progress" id="container-progress"></div>
     <div class="cart-stats">
       <div>
         <strong id="cart-containers">0</strong>
@@ -825,7 +857,7 @@ footer .ftr-fine {
     <div class="cart-info">Estimation départ entrepôt Marseille</div>
     <button class="checkout-btn whatsapp-btn" id="checkout-btn" onclick="goToCheckout()" disabled>
       <span style="font-size:16px;">💬</span>
-      Commander par WhatsApp
+      Composez votre container
     </button>
   </div>
 </aside>
@@ -991,10 +1023,36 @@ function renderCart() {
   document.getElementById('cart-total').textContent = fmtEur(totalPrice);
   document.getElementById('cart-palettes').textContent = totalPalettes;
   document.getElementById('cart-containers').textContent = totalContainersEq.toFixed(1).replace('.0', '');
+
+  const palettesInLastContainer = totalPalettes % PALETTES_PER_CONTAINER;
+  const containersPleins = Math.floor(totalPalettes / PALETTES_PER_CONTAINER);
+  const palettesRestantes = palettesInLastContainer === 0 ? 0 : PALETTES_PER_CONTAINER - palettesInLastContainer;
+  const containerComplet = totalPalettes > 0 && palettesInLastContainer === 0;
+  const progressPct = (palettesInLastContainer / PALETTES_PER_CONTAINER) * 100;
+  const progressEl = document.getElementById('container-progress');
+  if (progressEl) {
+    if (totalPalettes === 0) {
+      progressEl.innerHTML = '';
+    } else if (containerComplet) {
+      const label = containersPleins === 1
+        ? '<strong>Container complet</strong> — 20/20 palettes'
+        : `<strong>${containersPleins} containers complets</strong> — ${totalPalettes} palettes`;
+      progressEl.innerHTML = `<div class="cp-label ok">${label}</div><div class="cp-bar"><div class="cp-fill ok" style="width:100%"></div></div>`;
+    } else {
+      const prefix = containersPleins > 0
+        ? `${containersPleins} container${containersPleins>1?'s':''} complet${containersPleins>1?'s':''} + `
+        : '';
+      const label = `${prefix}<strong>${palettesInLastContainer}/20 palettes</strong> — il manque <strong>${palettesRestantes} palette${palettesRestantes>1?'s':''}</strong> pour compléter le container`;
+      progressEl.innerHTML = `<div class="cp-label warn">${label}</div><div class="cp-bar"><div class="cp-fill warn" style="width:${progressPct}%"></div></div><div class="cp-hint">Astuce&nbsp;: vous pouvez mixer plusieurs références — le total doit atteindre un multiple de 20 palettes (= 1 container 40 pieds).</div>`;
+    }
+  }
+
   const list = document.getElementById('cart-list');
+  const btn = document.getElementById('checkout-btn');
   if (cart.length === 0) {
-    list.innerHTML = '<div class="cart-empty">Votre panier est vide.<br>Sélectionnez vos références dans le catalogue.<br><span style=\'font-size:11px; color:var(--grey); display:block; margin-top:8px;\'>Commande minimum&nbsp;: 1 container</span></div>';
-    document.getElementById('checkout-btn').disabled = true;
+    list.innerHTML = '<div class="cart-empty">Votre panier est vide.<br>Composez votre container en mixant plusieurs références.<br><span style=\'font-size:11px; color:var(--grey); display:block; margin-top:8px;\'>1 container 40 pieds = 20 palettes (mix possible)</span></div>';
+    btn.disabled = true;
+    btn.textContent = 'Composez votre container';
   } else {
     list.innerHTML = cart.map((item, i) => {
       const totalPacks = item.packsPerUnit * item.qty;
@@ -1008,7 +1066,13 @@ function renderCart() {
         <div class="line-total">${fmtEur(item.pricePerUnit * item.qty)}</div>
       </div>`;
     }).join('');
-    document.getElementById('checkout-btn').disabled = false;
+    if (containerComplet) {
+      btn.disabled = false;
+      btn.textContent = containersPleins === 1 ? 'Valider la commande (1 container)' : `Valider la commande (${containersPleins} containers)`;
+    } else {
+      btn.disabled = true;
+      btn.textContent = `Il manque ${palettesRestantes} palette${palettesRestantes>1?'s':''} pour compléter`;
+    }
   }
 }
 
