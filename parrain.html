@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mon Parrainage — Zentra Hygiène</title>
+<title>Programme parrainage — Zentra Hygiène</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,170 +11,273 @@
 :root{
   --navy:#13344A; --navy-d:#0B2237; --gold:#C9A86A; --gold-d:#A88840;
   --cream:#FAF6F1; --white:#FFFFFF; --text1:#1B1B1B; --text2:#4A4A4A;
-  --grey:#8A8580; --border:#E8E1D6;
-  --green:#2e7d32; --orange:#F9A825;
+  --grey:#8A8580; --border:#E8E1D6; --green:#2e7d32; --orange:#F9A825;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text1);line-height:1.5;font-size:15px;min-height:100vh}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text1);line-height:1.55;font-size:15px;min-height:100vh}
 a{color:inherit}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-d));padding:36px 20px 32px;text-align:center;color:var(--cream)}
-.hero .brand{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;font-weight:600;letter-spacing:0.5px}
-.hero .brand span{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-top:4px}
-.hero h1{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;font-weight:500;margin-top:14px}
-.hero p{font-size:12px;opacity:.8;letter-spacing:0.5px;margin-top:2px}
-.container{max-width:480px;margin:0 auto;padding:18px}
-.card{background:var(--white);border:1px solid var(--border);padding:24px 22px;margin-bottom:14px;border-radius:2px}
-.eyebrow{font-size:10px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:10px;text-align:center}
-.btn{width:100%;background:var(--navy);color:var(--cream);border:none;padding:14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-weight:500;font-family:inherit;transition:background 0.2s}
-.btn:hover{background:var(--navy-d)}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:var(--gold-d);color:var(--white)}
-.btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy)}
-/* LOGIN */
-#vLogin .card{text-align:center;margin-top:-30px;background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-#vLogin h2{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--navy);margin:12px 0 6px;font-weight:500}
-#vLogin p{font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.55}
-#vLogin input{width:100%;border:1px solid var(--border);padding:14px;font-size:16px;font-family:inherit;text-align:center;letter-spacing:1.5px;outline:none;background:var(--cream);margin-bottom:12px}
-#vLogin input:focus{border-color:var(--gold);background:var(--white)}
-.err{color:#EF4444;font-size:12px;margin-top:10px;display:none;font-weight:500}
-.lead-icon{font-size:36px}
-/* DASHBOARD */
-#vDash{display:none}
-.name-card{background:linear-gradient(135deg,var(--navy),var(--navy-d));color:var(--cream);padding:24px 22px;text-align:center;margin-bottom:14px}
-.name-card .nom{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;font-weight:600}
-.name-card .societe{font-size:12px;letter-spacing:1px;color:var(--gold);margin-top:2px;text-transform:uppercase}
-.name-card .statut{display:inline-block;background:rgba(201,168,106,0.18);border:1px solid var(--gold);color:var(--gold);padding:5px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:14px;font-weight:500}
-.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-.stat{background:var(--white);border:1px solid var(--border);padding:18px 14px;text-align:center}
-.stat .val{font-family:'Playfair Display',serif;font-style:italic;font-size:32px;color:var(--navy);font-weight:600;line-height:1}
-.stat .lbl{font-size:10px;letter-spacing:1.5px;color:var(--text2);text-transform:uppercase;font-weight:500;margin-top:6px}
-.attente{background:#FFF8E1;border:1px solid var(--orange);padding:11px 14px;font-size:12px;color:#7A5A00;margin-bottom:14px;text-align:center;font-weight:500}
-.motiv{background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:1px solid #66BB6A;padding:18px 16px;margin-bottom:14px;text-align:center;color:#1B5E20;font-size:13px;line-height:1.6;font-weight:500}
-.motiv strong{color:#0E3911;font-weight:700}
+img{max-width:100%;display:block}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-d));padding:54px 22px 48px;text-align:center;color:var(--cream)}
+.hero .brand{font-family:'Playfair Display',serif;font-style:italic;font-size:34px;font-weight:600}
+.hero .brand .sub{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-top:4px;font-style:normal;font-family:'Inter',sans-serif}
+.hero .eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin:24px 0 12px;font-weight:600}
+.hero h1{font-family:'Playfair Display',serif;font-style:italic;font-size:38px;line-height:1.2;font-weight:600;max-width:720px;margin:0 auto 14px}
+.hero h1 .accent{color:var(--gold);background:linear-gradient(180deg,transparent 65%,rgba(201,168,106,0.3) 65%);padding:0 6px}
+.hero .lead{font-size:15px;opacity:.9;max-width:620px;margin:0 auto;line-height:1.65}
+
+/* SECTIONS */
+section{padding:60px 22px}
+.wrap{max-width:880px;margin:0 auto}
+.section-eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600;text-align:center;margin-bottom:14px}
+.section-h2{font-family:'Playfair Display',serif;font-style:italic;font-size:32px;color:var(--navy);text-align:center;font-weight:600;margin-bottom:14px}
+.section-intro{font-size:14px;color:var(--text2);text-align:center;max-width:660px;margin:0 auto 36px;line-height:1.65}
+
+/* GAINS — 3 colonnes */
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.gain{background:var(--white);border:1px solid var(--gold);padding:26px 18px;text-align:center}
+.gain .num{font-family:'Playfair Display',serif;font-style:italic;font-size:38px;color:var(--navy);font-weight:700;line-height:1;margin-bottom:6px}
+.gain .lbl{font-size:11px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.gain .desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* PROCESS — 4 étapes */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{text-align:center;position:relative}
+.step .n{display:inline-block;width:42px;height:42px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font-family:'Playfair Display',serif;font-style:italic;font-size:22px;font-weight:700;line-height:38px;margin-bottom:12px;background:var(--white)}
+.step h3{font-size:14px;color:var(--navy);font-weight:600;margin-bottom:8px}
+.step p{font-size:12px;color:var(--text2);line-height:1.55}
+
 /* PALIERS */
-.paliers{margin-bottom:14px}
-.paliers h3{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--navy);margin-bottom:14px;text-align:center;font-weight:500}
-.palier{display:flex;align-items:center;gap:14px;padding:14px;margin-bottom:8px;border:1px solid var(--border);background:var(--white);transition:all 0.3s}
-.palier.done{background:#E8F5E9;border-color:#66BB6A}
-.palier.next{background:#FFF8E1;border-color:var(--orange)}
-.palier .ico{font-size:22px;flex-shrink:0;width:38px;text-align:center}
-.palier .info{flex:1}
-.palier .info .title{font-size:13px;font-weight:600;color:var(--navy)}
-.palier .info .desc{font-size:11px;color:var(--text2);margin-top:2px}
-.palier .check{font-size:16px;color:var(--green);flex-shrink:0}
-.palier.locked{opacity:0.55}
-/* FILLEULS */
-.filleuls-card h3{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--navy);margin-bottom:14px;text-align:center;font-weight:500}
-.filleul{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:12px 4px;border-bottom:1px solid var(--border);align-items:center}
-.filleul:last-child{border:none}
-.filleul .num{width:28px;height:28px;background:var(--cream);border:1px solid var(--gold);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
-.filleul.valid .num{background:var(--green);border-color:var(--green);color:#fff}
-.filleul .nom-soc{font-size:13px;font-weight:600;color:var(--navy);line-height:1.3}
-.filleul .meta{font-size:11px;color:var(--text2);margin-top:1px}
-.filleul .credit{font-size:13px;font-weight:600;color:var(--green);white-space:nowrap}
-.filleul.attente .credit{color:#7A5A00}
-.section-actions{display:grid;gap:10px;margin-top:20px}
-.share-box{background:linear-gradient(135deg,var(--cream),#fff);border:1px dashed var(--gold);padding:18px;text-align:center;margin-bottom:14px}
-.share-box .label{font-size:10px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500}
-.share-box .num-share{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--navy);margin:6px 0 14px;font-weight:600;letter-spacing:1px}
-.share-box .hint{font-size:11px;color:var(--text2);font-style:italic;margin-top:10px;line-height:1.5}
-.foot{text-align:center;padding:24px 16px;font-size:11px;color:var(--grey);letter-spacing:0.5px}
-.foot a{color:var(--gold);text-decoration:none}
-.loading{text-align:center;padding:40px 16px;color:var(--text2);font-style:italic;font-size:13px}
+.paliers{background:linear-gradient(135deg,#FAF6F1,#FFFFFF 50%,#F5EBD4);padding:60px 22px}
+.palier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:860px;margin:0 auto}
+.palier{background:var(--white);border:1px solid var(--gold);padding:28px 22px;text-align:center;position:relative}
+.palier .ico{font-size:38px;margin-bottom:10px}
+.palier h3{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.palier .bonus{font-size:18px;color:var(--gold);font-weight:700;margin-bottom:8px;letter-spacing:0.5px}
+.palier .desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* EXEMPLE */
+.exemple{background:var(--navy);color:var(--cream);padding:60px 22px;text-align:center}
+.exemple .section-h2{color:var(--cream)}
+.exemple-card{background:var(--navy-d);border:1px solid var(--gold);padding:32px 24px;max-width:660px;margin:0 auto;text-align:left}
+.exemple-card h3{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--gold);margin-bottom:14px;font-weight:600}
+.exemple-line{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13px}
+.exemple-line:last-of-type{border:none}
+.exemple-line .val{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-weight:600;font-size:18px;white-space:nowrap}
+.exemple-total{padding-top:16px;margin-top:16px;border-top:2px solid var(--gold);display:flex;justify-content:space-between;align-items:baseline}
+.exemple-total .lbl{font-size:14px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.exemple-total .val{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-weight:700;font-size:32px}
+
+/* ACCÈS */
+.acces{background:var(--cream);padding:60px 22px}
+.acces-card{background:var(--white);border:1px solid var(--gold);border-radius:3px;padding:36px 28px;max-width:480px;margin:0 auto;box-shadow:0 4px 18px rgba(11,34,55,0.06)}
+.acces-card .ico{font-size:38px;text-align:center;margin-bottom:14px}
+.acces-card h2{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:var(--navy);text-align:center;font-weight:600;margin-bottom:10px}
+.acces-card p{font-size:13px;color:var(--text2);text-align:center;margin-bottom:18px;line-height:1.6}
+.acces-card input{width:100%;padding:14px;border:1px solid var(--border);background:var(--cream);font-size:16px;text-align:center;letter-spacing:1.5px;outline:none;margin-bottom:12px;font-family:inherit;border-radius:0}
+.acces-card input:focus{border-color:var(--gold);background:var(--white)}
+.btn{display:inline-block;width:100%;padding:14px;background:var(--navy);color:var(--cream);border:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;font-family:inherit;text-align:center;text-decoration:none}
+.btn:hover{background:var(--navy-d)}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.gold:hover{background:var(--gold-d);color:var(--white)}
+.btn.outline{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.btn.outline:hover{background:var(--navy);color:var(--cream)}
+.err{color:#EF4444;font-size:12px;font-weight:600;text-align:center;margin-top:10px;display:none}
+
+/* DASHBOARD (mêmes styles qu'avant simplifiés) */
+#vDash{display:none}
+.dash-back{display:block;text-align:center;margin-top:24px}
+.dash-back a{font-size:12px;color:var(--gold);letter-spacing:1px;text-decoration:none;font-weight:500}
+.name-card{background:linear-gradient(135deg,var(--navy),var(--navy-d));color:var(--cream);padding:24px 22px;text-align:center;border:1px solid var(--gold);margin-bottom:16px}
+.name-card .nom{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;font-weight:600}
+.name-card .societe{font-size:11px;letter-spacing:1px;color:var(--gold);margin-top:2px;text-transform:uppercase}
+.name-card .statut{display:inline-block;background:rgba(201,168,106,0.18);border:1px solid var(--gold);color:var(--gold);padding:5px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:14px;font-weight:600}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;max-width:480px;margin-left:auto;margin-right:auto}
+.stat{background:var(--white);border:1px solid var(--gold);padding:18px 14px;text-align:center}
+.stat .val{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:var(--navy);font-weight:600;line-height:1}
+.stat .lbl{font-size:10px;letter-spacing:1.5px;color:var(--text2);text-transform:uppercase;font-weight:500;margin-top:6px}
+.share-mini{background:linear-gradient(135deg,var(--cream),#fff);border:1px dashed var(--gold);padding:18px;text-align:center;max-width:480px;margin:0 auto 14px}
+.share-mini .lbl{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:6px}
+.share-mini .num{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--navy);margin-bottom:12px;font-weight:600;letter-spacing:1px}
+
+/* FOOTER */
+.foot{text-align:center;padding:24px 22px 36px;font-size:11px;color:var(--grey);letter-spacing:0.5px;background:var(--cream)}
+.foot a{color:var(--gold);text-decoration:none;font-weight:500}
+
+@media(max-width:760px){
+  .hero h1{font-size:28px}
+  .gains,.steps,.palier-grid{grid-template-columns:1fr;gap:12px}
+  .section-h2{font-size:24px}
+  section,.exemple,.acces,.paliers{padding:44px 16px}
+  .exemple-total .val{font-size:24px}
+}
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="brand">Zentra<span>Hygiène</span></div>
-  <h1>Mon programme parrainage</h1>
-  <p>Suivi en temps réel · Crédits · Paliers</p>
+  <div class="brand"><em>Zentra</em><span class="sub">Hygiène</span></div>
+  <div class="eyebrow">★ Programme Apporteurs d'Affaires ★</div>
+  <h1>Présentez Zentra à vos confrères<br>et touchez jusqu'à <span class="accent">32 000 € / an</span></h1>
+  <p class="lead">Vous connaissez des grossistes, GMS, restaurateurs, pharmacies ? Présentez-leur Zentra Hygiène. Chaque client que vous amenez vous rapporte une commission — pendant 12 mois.</p>
 </div>
 
-<div class="container">
+<!-- GAINS -->
+<section class="wrap">
+  <div class="section-eyebrow">Combien vous gagnez</div>
+  <h2 class="section-h2">3 sources de revenus cumulables</h2>
+  <p class="section-intro">Pour chaque filleul (= un nouveau client B2B que vous présentez à Zentra), vous touchez les 3 commissions ci-dessous, en crédit fournisseur ou en cash sur facture si vous avez un statut professionnel.</p>
 
-<!-- LOGIN -->
-<div id="vLogin">
-  <div class="card">
-    <div class="lead-icon">🤝</div>
-    <h2>Accédez à votre espace parrain</h2>
-    <p>Entrez le numéro de téléphone que vous avez utilisé lors de votre première commande Zentra.</p>
-    <input id="telInput" type="tel" inputmode="numeric" placeholder="06 12 34 56 78" maxlength="16">
-    <button class="btn" onclick="lookup()">Voir mes crédits & filleuls</button>
-    <div class="err" id="errMsg"></div>
-    <div style="font-size:11px;color:var(--grey);font-style:italic;margin-top:18px;line-height:1.55">
-      Vous n'avez pas encore parrainé ? <br>
-      Pour devenir parrain, communiquez votre numéro de téléphone à votre filleul, qui devra le saisir dans le champ « Parrain » lors de sa première commande sur <a href="/" style="color:var(--gold);text-decoration:none">zentra-hygiene.vercel.app</a>.
+  <div class="gains">
+    <div class="gain">
+      <div class="num">500 €</div>
+      <div class="lbl">Prime d'acquisition</div>
+      <div class="desc">Versée dès la 1ère commande payée de chaque filleul que vous amenez. Versement unique par filleul.</div>
+    </div>
+    <div class="gain">
+      <div class="num">+ 400 €</div>
+      <div class="lbl">Commission récurrente</div>
+      <div class="desc">Par container 40 pieds que votre filleul commande ensuite, pendant <strong>12 mois</strong> à partir de sa 1ère commande.</div>
+    </div>
+    <div class="gain">
+      <div class="num">+ 8 000 €</div>
+      <div class="lbl">Bonus paliers</div>
+      <div class="desc">Bonus exceptionnels au-delà de <strong>3, 5 et 10 filleuls validés</strong>. Cumulatifs sans limite.</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- DASHBOARD -->
-<div id="vDash">
-  <div class="name-card">
-    <div class="nom" id="dNom">—</div>
-    <div class="societe" id="dSociete">—</div>
-    <div class="statut" id="dStatut">🌱 Apporteur d'affaires</div>
-  </div>
+<!-- PROCESS -->
+<section class="wrap" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-eyebrow">Comment ça marche</div>
+  <h2 class="section-h2">En 4 étapes</h2>
 
-  <div class="stats-row">
-    <div class="stat">
-      <div class="val" id="dFilleuls">0</div>
-      <div class="lbl">Filleuls validés</div>
+  <div class="steps">
+    <div class="step">
+      <div class="n">1</div>
+      <h3>Vous êtes Zentra</h3>
+      <p>Vous nous contactez par WhatsApp (+33 7 73 51 42 84) pour signer le contrat apporteur. Votre numéro de téléphone devient votre code parrain unique.</p>
     </div>
-    <div class="stat">
-      <div class="val" id="dCredits">0 €</div>
-      <div class="lbl">Crédit cumulé</div>
+    <div class="step">
+      <div class="n">2</div>
+      <h3>Vous parlez Zentra</h3>
+      <p>Vous présentez Zentra Hygiène à vos contacts : grossistes, GMS, restaurateurs, pharmacies, épiceries. Vous leur partagez le site et votre code parrain.</p>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <h3>Votre filleul commande</h3>
+      <p>Sur zentra-hygiene.vercel.app, votre filleul saisit votre numéro dans le champ « Téléphone du parrain ». Il bénéficie d'un accueil privilégié, vous êtes crédité automatiquement.</p>
+    </div>
+    <div class="step">
+      <div class="n">4</div>
+      <h3>Vous touchez</h3>
+      <p>Dès que le filleul paie sa commande, vos 500 € sont crédités. Vous suivez tout sur votre espace personnel (cette page) en temps réel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PALIERS -->
+<section class="paliers">
+  <div class="wrap">
+    <div class="section-eyebrow">Bonus paliers</div>
+    <h2 class="section-h2">Plus vous parrainez, plus vous gagnez</h2>
+    <p class="section-intro">Au-delà de la commission classique, vous débloquez des <strong>bonus cumulatifs</strong> à chaque palier de filleuls validés.</p>
+
+    <div class="palier-grid">
+      <div class="palier">
+        <div class="ico">🤝</div>
+        <h3>3 filleuls</h3>
+        <div class="bonus">+ 1 500 €</div>
+        <div class="desc">Statut <strong>Partenaire</strong> Zentra</div>
+      </div>
+      <div class="palier">
+        <div class="ico">🥇</div>
+        <h3>5 filleuls</h3>
+        <div class="bonus">+ 3 000 €</div>
+        <div class="desc">Statut <strong>Gold</strong> · cumulatif avec Partenaire (total 4 500 €)</div>
+      </div>
+      <div class="palier">
+        <div class="ico">💎</div>
+        <h3>10 filleuls</h3>
+        <div class="bonus">+ 8 000 €</div>
+        <div class="desc">Statut <strong>Prestige</strong> · cumulatif avec les précédents (total 12 500 €)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLE -->
+<section class="exemple">
+  <div class="wrap">
+    <div class="section-eyebrow" style="color:var(--gold)">Cas concret</div>
+    <h2 class="section-h2">Combien vous gagneriez vraiment</h2>
+    <p class="section-intro" style="color:#bcc8d3">Exemple chiffré pour 5 filleuls grossistes qui commandent en moyenne 5 containers par an sur 12 mois.</p>
+
+    <div class="exemple-card">
+      <h3>Année 1 — 5 filleuls actifs · 25 containers cumulés</h3>
+      <div class="exemple-line"><span>5 primes d'acquisition (5 × 500 €)</span><span class="val">2 500 €</span></div>
+      <div class="exemple-line"><span>Commissions récurrentes (20 containers × 400 €)</span><span class="val">8 000 €</span></div>
+      <div class="exemple-line"><span>Bonus palier 3 filleuls</span><span class="val">1 500 €</span></div>
+      <div class="exemple-line"><span>Bonus palier 5 filleuls</span><span class="val">3 000 €</span></div>
+      <div class="exemple-total"><span class="lbl">TOTAL gagné</span><span class="val">15 000 €</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCÈS -->
+<section class="acces" id="acces">
+  <div class="section-eyebrow">Vous êtes déjà parrain ?</div>
+  <h2 class="section-h2">Accédez à votre espace</h2>
+  <p class="section-intro">Entrez le numéro de téléphone que vous avez communiqué à vos filleuls. Vous verrez en temps réel vos filleuls, vos crédits cumulés, et votre progression vers les paliers bonus.</p>
+
+  <div id="vLogin">
+    <div class="acces-card">
+      <div class="ico">🤝</div>
+      <h2>Mon espace parrain</h2>
+      <p>Saisissez votre numéro de téléphone pour voir vos crédits et filleuls.</p>
+      <input id="telInput" type="tel" inputmode="numeric" placeholder="06 12 34 56 78" maxlength="16">
+      <button class="btn" onclick="lookup()">Voir mes crédits & filleuls</button>
+      <div class="err" id="errMsg"></div>
+    </div>
+    <div class="dash-back">
+      <a href="https://wa.me/33773514284?text=Je%20veux%20devenir%20parrain%20Zentra%20Hygi%C3%A8ne" target="_blank">📞 Pas encore parrain ? Contactez-nous sur WhatsApp →</a>
     </div>
   </div>
 
-  <div id="enAttenteInfo" class="attente" style="display:none"></div>
-
-  <div class="motiv" id="motivMsg">—</div>
-
-  <div class="paliers card">
-    <h3>★ Vos paliers ★</h3>
-    <div id="paliersList"></div>
+  <div id="vDash">
+    <div class="name-card">
+      <div class="nom" id="dNom">—</div>
+      <div class="societe" id="dSociete">—</div>
+      <div class="statut" id="dStatut">🌱 Apporteur</div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="val" id="dFilleuls">0</div><div class="lbl">Filleuls validés</div></div>
+      <div class="stat"><div class="val" id="dCredits">0 €</div><div class="lbl">Crédit cumulé</div></div>
+    </div>
+    <div id="enAttenteInfo" style="display:none;background:#FFF8E1;border:1px solid var(--orange);padding:11px 14px;font-size:12px;color:#7A5A00;margin-bottom:14px;text-align:center;font-weight:500;max-width:480px;margin-left:auto;margin-right:auto"></div>
+    <div id="motivMsg" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:1px solid #66BB6A;padding:18px;margin-bottom:14px;text-align:center;color:#1B5E20;font-size:13px;line-height:1.6;font-weight:500;max-width:480px;margin-left:auto;margin-right:auto">—</div>
+    <div class="share-mini">
+      <div class="lbl">Votre n° parrain à partager</div>
+      <div class="num" id="telShare">—</div>
+      <button class="btn gold" onclick="shareTel()">📲 Partager par WhatsApp</button>
+    </div>
+    <div class="dash-back">
+      <a href="#" onclick="logout();return false">← Changer de numéro</a>
+    </div>
   </div>
-
-  <div class="card share-box">
-    <div class="label">Votre numéro parrain</div>
-    <div class="num-share" id="telShare">—</div>
-    <button class="btn btn-gold" onclick="shareTel()">📲 Partager mon numéro par WhatsApp</button>
-    <div class="hint">Vos filleuls le saisissent dans le champ « Parrain » lors de leur commande.</div>
-  </div>
-
-  <div class="card filleuls-card">
-    <h3>Vos filleuls</h3>
-    <div id="filleulList"></div>
-  </div>
-
-  <div class="section-actions">
-    <button class="btn btn-outline" onclick="logout()">← Changer de numéro</button>
-  </div>
-</div>
-
-</div>
+</section>
 
 <div class="foot">
-  Zentra Hygiène · Crédits valables sur prochaine commande<br>
-  Validés après paiement effectif du filleul · <a href="/">Retour au site</a>
+  Zentra Hygiène · Crédits valables 24 mois · Validés après paiement effectif du filleul<br>
+  <a href="/">← Retour à la boutique</a>
 </div>
 
 <script>
 function normalizeTel(t){return String(t||'').replace(/\s+/g,'').replace(/^\+/,'').replace(/^0/,'33');}
-function formatTel(t){
-  const n=normalizeTel(t);
-  if(n.length===11&&n.startsWith('33'))return '+33 '+n.slice(2,3)+' '+n.slice(3,5)+' '+n.slice(5,7)+' '+n.slice(7,9)+' '+n.slice(9,11);
-  return t;
-}
+function formatTel(t){const n=normalizeTel(t);if(n.length===11&&n.startsWith('33'))return '+33 '+n.slice(2,3)+' '+n.slice(3,5)+' '+n.slice(5,7)+' '+n.slice(7,9)+' '+n.slice(9,11);return t;}
 function fmtEur(n){return Number(n||0).toLocaleString('fr-FR')+' €';}
-
-const PALIERS=[
-  {n:3,  ico:'🤝', title:'3 filleuls validés',  desc:'Statut Partenaire + 1 500 € de crédit bonus'},
-  {n:5,  ico:'🥇', title:'5 filleuls validés',  desc:'Statut Gold + 3 000 € de crédit bonus'},
-  {n:10, ico:'💎', title:'10 filleuls validés', desc:'Statut Prestige + 8 000 € de crédit bonus'}
-];
 
 async function lookup(){
   const raw=document.getElementById('telInput').value.trim();
@@ -185,15 +288,9 @@ async function lookup(){
   try{
     const r=await fetch('/api/parrain?tel='+encodeURIComponent(tel));
     const data=await r.json();
-    if(!data.found){
-      err.textContent='❌ Aucun parrainage trouvé pour ce numéro';
-      err.style.display='block';return;
-    }
+    if(!data.found){err.textContent='❌ Aucun parrainage trouvé pour ce numéro. Pas encore parrain ? Contactez-nous sur WhatsApp.';err.style.display='block';return;}
     renderDash(data);
-  }catch(e){
-    err.textContent='❌ Erreur réseau, réessayez';
-    err.style.display='block';
-  }
+  }catch(e){err.textContent='❌ Erreur réseau, réessayez';err.style.display='block';}
 }
 
 function renderDash(d){
@@ -209,65 +306,29 @@ function renderDash(d){
   if(d.filleulsEnAttente>0){
     const e=document.getElementById('enAttenteInfo');
     e.style.display='block';
-    e.textContent='⏳ '+d.filleulsEnAttente+' filleul'+(d.filleulsEnAttente>1?'s':'')+' en attente de paiement (les crédits seront débloqués à la validation)';
+    e.textContent='⏳ '+d.filleulsEnAttente+' filleul'+(d.filleulsEnAttente>1?'s':'')+' en attente de paiement';
   }
 
   let motiv='';
   const next=d.paliersSuivants[0];
   if(d.filleulsValides>=10){
-    motiv='🎉 BRAVO ! Vous avez atteint le statut <strong>Prestige</strong>. Vous cumulez le crédit max paliers (8 000 € débloqués). Continuez à parrainer — vous restez à 400 € par container filleul.';
+    motiv='🎉 BRAVO ! Statut <strong>Prestige</strong> débloqué. Continuez !';
   }else if(next){
     const restant=next-d.filleulsValides;
-    motiv='Encore <strong>'+restant+' filleul'+(restant>1?'s':'')+' validé'+(restant>1?'s':'')+'</strong> pour atteindre le palier <strong>'+next+'</strong> et débloquer <strong>'+fmtEur({3:1500,5:3000,10:8000}[next])+' de crédit bonus</strong>.';
+    motiv='Encore <strong>'+restant+' filleul'+(restant>1?'s':'')+'</strong> pour le palier <strong>'+next+'</strong> = <strong>+'+fmtEur({3:1500,5:3000,10:8000}[next])+'</strong>';
   }else{
-    motiv='Parrainez votre premier filleul et touchez <strong>500 €</strong> dès sa 1ère commande payée + 400 € par container suivant pendant 12 mois.';
+    motiv='Parrainez votre premier filleul = 500 €';
   }
   document.getElementById('motivMsg').innerHTML=motiv;
-
-  // Paliers
-  let html='';
-  PALIERS.forEach(p=>{
-    const done=d.filleulsValides>=p.n;
-    const isNext=!done&&d.paliersSuivants[0]===p.n;
-    const cls=done?'done':isNext?'next':'locked';
-    html+='<div class="palier '+cls+'">'
-      +'<div class="ico">'+p.ico+'</div>'
-      +'<div class="info"><div class="title">'+p.title+'</div><div class="desc">'+p.desc+'</div></div>'
-      +'<div class="check">'+(done?'✓':isNext?'⏳':'🔒')+'</div>'
-      +'</div>';
-  });
-  document.getElementById('paliersList').innerHTML=html;
-
-  // Filleuls list
-  let fh='';
-  if(!d.filleuls.length){
-    fh='<div class="loading">Aucun filleul pour l\'instant</div>';
-  }else{
-    d.filleuls.forEach((f,i)=>{
-      const status=f.primeAcquired?'valid':'attente';
-      const credit=f.credits>0?'+'+fmtEur(f.credits):'⏳ en attente';
-      const date=f.firstOrderDate?new Date(f.firstOrderDate).toLocaleDateString('fr-FR'):'—';
-      fh+='<div class="filleul '+status+'">'
-        +'<div class="num">'+(i+1)+'</div>'
-        +'<div><div class="nom-soc">'+f.company+'</div><div class="meta">'+f.containersValides+' container'+(f.containersValides>1?'s':'')+' validé'+(f.containersValides>1?'s':'')+(f.containersEnAttente?' · '+f.containersEnAttente+' en attente':'')+(date!=='—'?' · 1ère cmd '+date:'')+'</div></div>'
-        +'<div class="credit">'+credit+'</div>'
-        +'</div>';
-    });
-  }
-  document.getElementById('filleulList').innerHTML=fh;
 }
 
 function shareTel(){
   const tel=document.getElementById('telShare').textContent;
-  const txt='✦ Parrainage Zentra Hygiène ✦\n\nPour vous faire bénéficier d\'avantages, saisissez mon numéro de téléphone dans le champ « Parrain » lors de votre commande :\n\n*'+tel+'*\n\nCommandez sur https://zentra-hygiene.vercel.app';
+  const txt='✦ Parrainage Zentra Hygiène ✦\n\nUtilisez mon numéro de téléphone dans le champ « Parrain » lors de votre commande :\n\n*'+tel+'*\n\nCommandez sur https://zentra-hygiene.vercel.app';
   window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');
 }
 
-function logout(){
-  document.getElementById('vDash').style.display='none';
-  document.getElementById('vLogin').style.display='block';
-  document.getElementById('telInput').value='';
-}
+function logout(){document.getElementById('vDash').style.display='none';document.getElementById('vLogin').style.display='block';document.getElementById('telInput').value='';}
 
 document.getElementById('telInput').addEventListener('keydown',function(e){if(e.key==='Enter')lookup();});
 </script>
