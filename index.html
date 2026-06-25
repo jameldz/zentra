@@ -262,7 +262,7 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
 </section>
 
 <div class="bandeau">
-  Vente B2B professionnels &nbsp;·&nbsp; Minimum <strong>1 palette</strong> &nbsp;·&nbsp; Mix de références possible &nbsp;·&nbsp; Tarifs HT départ Marseille &nbsp;·&nbsp; <strong>Remises dégressives</strong> au-delà d'1 container &nbsp;·&nbsp; <strong>★ Programme parrainage</strong>
+  Vente B2B professionnels &nbsp;·&nbsp; Minimum <strong>1 palette</strong> &nbsp;·&nbsp; Mix de références possible &nbsp;·&nbsp; Tarifs HT départ Marseille &nbsp;·&nbsp; <strong>Remises dégressives</strong> au-delà d'1 container &nbsp;·&nbsp; <a href="/parrain" style="color:var(--gold);text-decoration:underline;font-weight:500">★ Espace parrain</a>
 </div>
 
 <!-- CATEGORIE 1 : PAPIER TOILETTE -->
@@ -330,9 +330,9 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
           <option value="autre">Autre B2B</option>
         </select></div>
         <div>
-          <label>Code parrain (optionnel)</label>
-          <input type="text" name="parrain" placeholder="ZTR-XXXXX (si on vous l'a transmis)" style="text-transform:uppercase">
-          <div style="font-size:11px;color:var(--grey);font-style:italic;margin-top:4px;line-height:1.45">Code reçu d'un client Zentra ? Saisissez-le pour bénéficier de <strong style="color:var(--gold);font-style:normal">−2 % de bienvenue</strong>.</div>
+          <label>Téléphone du parrain (optionnel)</label>
+          <input type="tel" name="parrainTel" placeholder="06 12 34 56 78">
+          <div style="font-size:11px;color:var(--grey);font-style:italic;margin-top:4px;line-height:1.45">Un grossiste Zentra vous a recommandé ? Saisissez son n° de téléphone — il touchera <strong style="color:var(--gold);font-style:normal">500 €</strong> à votre 1ère commande puis 400 €/container.</div>
         </div>
         <div><label>Commentaire (optionnel)</label><textarea name="comment" placeholder="Volume cible mensuel, livraison souhaitée, contraintes logistiques..."></textarea></div>
         <button type="submit" class="checkout-btn whatsapp-btn">
@@ -348,16 +348,16 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
       <p>Votre commande est pré-rédigée. Vérifiez puis appuyez sur ENVOYER. Nous reviendrons vers vous sous 24h.</p>
       <div class="order-ref" id="order-ref"></div>
 
-      <div class="parrain-block" id="parrain-block" style="display:none;margin-top:22px;padding:18px 16px;background:var(--cream);border:1px solid var(--gold);border-radius:3px;text-align:left">
-        <div style="font-size:11px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:8px;text-align:center">★ Votre code parrain ★</div>
-        <div id="my-parrain-code" style="font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:var(--navy);text-align:center;margin:4px 0 14px;letter-spacing:1.5px;font-weight:600"></div>
-        <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:14px;text-align:center">
-          Partagez ce code à vos confrères grossistes/GMS. Pour chaque commande passée avec votre code,<br>
-          <strong style="color:var(--navy)">vous gagnez 3 % de crédit sur votre prochaine commande Zentra.</strong>
+      <div class="parrain-block" id="parrain-block" style="margin-top:22px;padding:18px 16px;background:var(--cream);border:1px solid var(--gold);border-radius:3px;text-align:left">
+        <div style="font-size:11px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:8px;text-align:center">★ Devenez parrain Zentra ★</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:14px;text-align:center">
+          Vous touchez <strong style="color:var(--navy)">500 €</strong> à la 1ère commande de chaque filleul que vous amenez,<br>
+          puis <strong style="color:var(--navy)">400 €</strong> par container suivant pendant 12 mois.<br><br>
+          <em>Paliers bonus : 3 filleuls = +1 500 € · 5 filleuls = +3 000 € · 10 filleuls = +8 000 €</em>
         </div>
-        <button type="button" class="checkout-btn whatsapp-btn" onclick="shareParrainCode()" style="margin-top:6px">
-          <span style="font-size:16px">💬</span> Partager mon code par WhatsApp
-        </button>
+        <a href="/parrain" target="_blank" class="checkout-btn whatsapp-btn" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px">
+          <span style="font-size:16px">→</span> Mon espace parrain
+        </a>
       </div>
 
       <button class="checkout-btn" onclick="resetCart()" style="margin-top:14px;background:transparent;color:var(--navy);border:1px solid var(--navy)">Nouvelle commande</button>
@@ -386,7 +386,8 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
   <div class="ftr-contact">
     Commercial · <a href="https://wa.me/33773514284">+33 7 73 51 42 84</a><br>
     Email · <a href="mailto:marseilledz@protonmail.com">marseilledz@protonmail.com</a><br>
-    Entrepôt départ · Marseille, France
+    Entrepôt départ · Marseille, France<br><br>
+    <a href="/parrain" style="color:var(--gold);font-weight:600">★ Mon espace parrain →</a>
   </div>
   <p class="ftr-fine">Vente exclusivement aux professionnels · Minimum 1 palette · HT départ Marseille · Remises volumes négociées</p>
 </footer>
@@ -679,14 +680,6 @@ function goToCheckout(){
   document.getElementById('cart-title').textContent='Coordonnées';
 }
 
-function generateParrainCode(company){
-  if(!company)return '';
-  // ZTR-{6 lettres du nom société upper}-{année}
-  const base=String(company).toUpperCase().replace(/[^A-Z]/g,'').slice(0,6)||'CLIENT';
-  const year=new Date().getFullYear();
-  return `ZTR-${base}-${year}`;
-}
-
 function loadClientInfo(){
   try{
     const saved=JSON.parse(localStorage.getItem('zentra_client')||'{}');
@@ -702,18 +695,7 @@ function saveClientInfo(d){
   try{
     const toSave={company:d.company,name:d.name,phone:d.phone,city:d.city,type:d.type};
     localStorage.setItem('zentra_client',JSON.stringify(toSave));
-    // Stocker code parrain perso s'il n'existe pas
-    if(!localStorage.getItem('zentra_my_referral_code')&&d.company){
-      localStorage.setItem('zentra_my_referral_code',generateParrainCode(d.company));
-    }
   }catch(e){}
-}
-
-function shareParrainCode(){
-  const code=localStorage.getItem('zentra_my_referral_code')||'';
-  if(!code)return;
-  const txt=`✦ Code parrain Zentra Hygiène ✦\n\nUtilisez mon code pour bénéficier de −2 % de bienvenue sur votre commande :\n\n*${code}*\n\nCommandez sur https://zentra-hygiene.vercel.app`;
-  window.open(`https://wa.me/?text=${encodeURIComponent(txt)}`,'_blank');
 }
 function clearClientInfo(){
   try{localStorage.removeItem('zentra_client');}catch(e){}
@@ -734,12 +716,11 @@ function submitOrder(ev){
   const tier=getDiscountTier(totalPalettes);
   const volumeDiscount=grossPrice*(tier.pct/100);
 
-  // Code parrain saisi → remise filleul -2%
-  const parrainCode=(d.parrain||'').toUpperCase().trim();
-  const isValidParrain=/^ZTR-[A-Z]{2,8}-\d{4}$/.test(parrainCode);
-  const parrainDiscount=isValidParrain?grossPrice*0.02:0;
+  // Téléphone parrain saisi → enregistré pour tracking
+  const parrainTel=(d.parrainTel||'').replace(/\s+/g,'').trim();
+  const hasParrain=parrainTel.length>=8;
 
-  const netPrice=grossPrice-volumeDiscount-parrainDiscount;
+  const netPrice=grossPrice-volumeDiscount;
 
   let msg=`*✦ COMMANDE ZENTRA HYGIÈNE ✦*\n\n*Réf :* ${orderRef}\n*Date :* ${new Date().toLocaleDateString('fr-FR')}\n\n━━━ PRODUITS ━━━`;
   cart.forEach(item=>{
@@ -748,9 +729,8 @@ function submitOrder(ev){
   });
   msg+=`\n\n━━━ TOTAL ━━━\nPalettes : ${totalPalettes}\nContainers : ${totalContainersEq}\nSous-total : ${fmtEur(grossPrice)}`;
   if(tier.pct>0)msg+=`\nRemise volume (${tier.label}) : -${fmtEur(volumeDiscount)}`;
-  if(isValidParrain)msg+=`\nRemise parrainage (-2%) : -${fmtEur(parrainDiscount)}`;
   msg+=`\n*TOTAL HT : ${fmtEur(netPrice)}*\n\n━━━ CLIENT ━━━\nSociété : ${d.company}\nContact : ${d.name}\nTél : ${d.phone}\nVille : ${d.city}\nType : ${d.type}`;
-  if(isValidParrain)msg+=`\n\n*★ PARRAINAGE ★*\nCode parrain : ${parrainCode}\n→ Créditer 3% au parrain sur sa prochaine commande`;
+  if(hasParrain)msg+=`\n\n*★ PARRAINAGE ★*\nTéléphone parrain : ${parrainTel}\n→ Créditer 500 € au parrain à validation de cette commande, puis 400 € par container suivant pendant 12 mois`;
   if(d.comment&&d.comment.trim())msg+=`\n\nCommentaire : ${d.comment}`;
   msg+=`\n\n_Envoyé depuis zentra-hygiene.vercel.app_`;
 
@@ -759,12 +739,27 @@ function submitOrder(ev){
   document.getElementById('confirmation').style.display='block';
   document.getElementById('order-ref').textContent=`Référence ${orderRef} · ${fmtEur(netPrice)} HT`;
 
-  // Afficher le bloc parrainage avec le code perso
-  const myCode=localStorage.getItem('zentra_my_referral_code');
-  if(myCode){
-    document.getElementById('my-parrain-code').textContent=myCode;
-    document.getElementById('parrain-block').style.display='block';
-  }
+  // Persistance backend
+  fetch('/api/order',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      ref:orderRef,
+      client:d.company,
+      contact:d.name,
+      tel:d.phone,
+      city:d.city,
+      type:d.type,
+      comment:d.comment||'',
+      parrainTel:hasParrain?parrainTel:'',
+      palettes:totalPalettes,
+      containers:Number(totalContainersEq)||1,
+      grossPrice:grossPrice,
+      volumeDiscount:volumeDiscount,
+      netPrice:netPrice,
+      cart:cart.map(i=>({name:i.productName,variant:i.variantLabel,unit:i.unit,qty:i.qty,line:i.pricePerUnit*i.qty}))
+    })
+  }).catch(e=>console.warn('order persistence failed',e));
 
   cart=[];renderCart();
 }
