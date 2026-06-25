@@ -215,6 +215,53 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
 .ftr-contact a:hover{border-bottom-color:var(--gold)}
 .ftr-fine{font-size:10px;color:#7d8b97;letter-spacing:1.5px;text-transform:uppercase;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.08)}
 
+
+/* SECTION PARRAINAGE */
+.parrain-promo{
+  background:linear-gradient(135deg,#FAF6F1,#FFFFFF 70%,#F5EBD4);
+  padding:80px 30px;
+  text-align:center;
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+}
+.parrain-inner{max-width:980px;margin:0 auto}
+.parrain-eyebrow{font-size:11px;letter-spacing:3.5px;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:18px}
+.parrain-h2{font-family:'Playfair Display',serif;font-style:italic;font-size:42px;color:var(--navy);line-height:1.2;font-weight:600;margin-bottom:14px}
+.parrain-amount{color:var(--gold);font-weight:700;background:linear-gradient(180deg,transparent 60%,rgba(201,168,106,0.25) 60%);padding:0 6px}
+.parrain-lead{font-size:15px;color:var(--text2);max-width:660px;margin:0 auto 36px;line-height:1.65}
+.parrain-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  max-width:860px;margin:0 auto 32px;
+}
+.parrain-card{
+  background:var(--white);
+  border:1px solid var(--gold);
+  padding:28px 18px;
+  text-align:center;
+}
+.parrain-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:36px;color:var(--navy);font-weight:700;letter-spacing:1px;margin-bottom:8px;
+}
+.parrain-lbl{font-size:12px;color:var(--text2);line-height:1.5;letter-spacing:0.3px}
+.parrain-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.parrain-btn{
+  display:inline-block;padding:14px 28px;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;
+  font-weight:600;text-decoration:none;font-family:'Inter',sans-serif;transition:all 0.2s;
+}
+.parrain-btn.primary{background:var(--navy);color:var(--cream);border:1px solid var(--navy)}
+.parrain-btn.primary:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.parrain-btn.outline{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.parrain-btn.outline:hover{background:var(--navy);color:var(--cream)}
+.parrain-hint{font-size:11px;color:var(--grey);font-style:italic;letter-spacing:0.3px}
+@media(max-width:768px){
+  .parrain-promo{padding:48px 20px}
+  .parrain-h2{font-size:28px}
+  .parrain-grid{grid-template-columns:1fr;gap:12px;margin-bottom:24px}
+  .parrain-card{padding:22px 14px}
+  .parrain-num{font-size:30px}
+}
+
 /* MOBILE */
 @media(max-width:768px){
   header.site{padding:14px 20px}
@@ -266,6 +313,35 @@ footer p{font-size:13px;color:#bcc8d3;line-height:1.6;max-width:680px;margin:0 a
 <div class="bandeau">
   Vente B2B professionnels &nbsp;·&nbsp; Minimum <strong>1 palette</strong> &nbsp;·&nbsp; Mix de références possible &nbsp;·&nbsp; Tarifs HT départ Marseille &nbsp;·&nbsp; <strong>Remises dégressives au-delà d'1 container</strong>
 </div>
+
+
+<!-- SECTION PARRAINAGE — bien visible -->
+<section class="parrain-promo" id="parrainage">
+  <div class="parrain-inner">
+    <div class="parrain-eyebrow">★ Programme Apporteurs d'Affaires ★</div>
+    <h2 class="parrain-h2">Devenez parrain Zentra<br>et touchez jusqu'à <span class="parrain-amount">32 000 €</span> par an</h2>
+    <p class="parrain-lead">Vous connaissez des grossistes, GMS, restaurateurs, pharmacies ? Présentez-leur Zentra et touchez une commission à chaque container qu'ils commandent — pendant 12 mois.</p>
+    <div class="parrain-grid">
+      <div class="parrain-card">
+        <div class="parrain-num">500 €</div>
+        <div class="parrain-lbl">À la 1ère commande payée de chaque filleul</div>
+      </div>
+      <div class="parrain-card">
+        <div class="parrain-num">+ 400 €</div>
+        <div class="parrain-lbl">Par container suivant pendant 12 mois</div>
+      </div>
+      <div class="parrain-card">
+        <div class="parrain-num">+ 8 000 €</div>
+        <div class="parrain-lbl">Bonus paliers (3 / 5 / 10 filleuls validés)</div>
+      </div>
+    </div>
+    <div class="parrain-actions">
+      <a href="/parrain" target="_blank" class="parrain-btn primary">Accéder à mon espace parrain →</a>
+      <a href="https://wa.me/33773514284?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20programme%20parrain%20Zentra" target="_blank" class="parrain-btn outline">💬 Demander le pack apporteur</a>
+    </div>
+    <div class="parrain-hint">Rémunération en crédit fournisseur ou cash (selon votre statut). Aucun investissement, aucun stock à porter, suivi en temps réel.</div>
+  </div>
+</section>
 
 <!-- CATEGORIE 1 : PAPIER TOILETTE -->
 <section class="category">
